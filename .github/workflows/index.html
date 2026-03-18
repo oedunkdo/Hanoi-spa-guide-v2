@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>河內 · Spa 養生完全攻略 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#6B9B7E; --deep:#2B4A36; --jade:#3D7260; --mint:#A8CBBA;
+  --cream:#F9F5EE; --warm:#F3EAD8; --mist:#EBF2ED;
+  --stone:#BFB094; --dark:#141E18; --text:#253020; --muted:#607060;
+  --white:#FDFCF8; --gold:#B8935A; --lgold:#DDB96E;
+  --red:#B84040; --sky:#7BB8D4; --night:#0D1B2A;
+  --b1:rgba(107,155,126,.22); --b2:rgba(184,147,90,.2);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* ══ CURSOR ══ */
+body{cursor:none;}
+#cur{width:7px;height:7px;background:var(--sage);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform .15s;}
+#cur2{width:28px;height:28px;border:1px solid rgba(107,155,126,.6);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;}
+
+/* ══ FULL-PAGE COVER ══ */
+.cover{
+  position:relative; width:100%; height:100vh; min-height:680px;
+  overflow:hidden; display:flex; flex-direction:column;
+  justify-content:flex-end;
+}
+.cover-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom, rgba(13,27,42,.15) 0%, rgba(13,27,42,.55) 55%, rgba(13,27,42,.92) 100%),
+    linear-gradient(135deg, rgba(43,74,54,.6) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='1200' height='800' fill='%230D1B2A'/%3E%3Ccircle cx='600' cy='320' r='380' fill='%232B4A36' opacity='.5'/%3E%3Ccircle cx='900' cy='150' r='200' fill='%233D7260' opacity='.25'/%3E%3Ccircle cx='150' cy='600' r='160' fill='%232B4A36' opacity='.2'/%3E%3Cellipse cx='600' cy='700' rx='500' ry='120' fill='%231A2E22' opacity='.5'/%3E%3Cpath d='M0 400 Q300 300 600 400 Q900 500 1200 400' stroke='%236B9B7E' stroke-width='1' fill='none' opacity='.15'/%3E%3Cpath d='M0 450 Q300 350 600 450 Q900 550 1200 450' stroke='%236B9B7E' stroke-width='1' fill='none' opacity='.1'/%3E%3C/svg%3E") center/cover;
+}
+/* star-like dots */
+.cover-stars{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 73% 12%, rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 42% 8%,  rgba(255,255,255,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 88% 35%, rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 5%  55%, rgba(255,255,255,.3) 0%,transparent 100%),
+    radial-gradient(1px 1px at 95% 62%, rgba(255,255,255,.4) 0%,transparent 100%),
+    radial-gradient(2px 2px at 60% 18%, rgba(219,185,110,.7) 0%,transparent 100%),
+    radial-gradient(2px 2px at 25% 40%, rgba(168,203,186,.5) 0%,transparent 100%);
+}
+/* floating bamboo silhouette left */
+.cover-bamboo{
+  position:absolute;left:0;top:0;bottom:0;width:180px;
+  background:
+    repeating-linear-gradient(180deg,transparent 0,transparent 28px,rgba(107,155,126,.06) 28px,rgba(107,155,126,.06) 30px),
+    repeating-linear-gradient(90deg,transparent 0,transparent 38px,rgba(107,155,126,.04) 38px,rgba(107,155,126,.04) 40px);
+  opacity:.7;
+}
+.cover-content{
+  position:relative;z-index:2;
+  padding:clamp(40px,6vw,80px) clamp(28px,7vw,100px) clamp(56px,8vw,100px);
+}
+.cover-eyebrow{
+  display:flex;align-items:center;gap:14px;margin-bottom:22px;
+  opacity:0;animation:fadeUp .8s ease .2s forwards;
+}
+.cover-eyebrow span{width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--mint));}
+.cover-eyebrow p{font-family:'Noto Serif TC',serif;font-size:.78rem;letter-spacing:.4em;color:var(--mint);text-transform:uppercase;}
+
+.cover h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.8rem,10vw,8.5rem);
+  font-weight:300;line-height:1;color:#fff;
+  margin-bottom:10px;
+  opacity:0;animation:fadeUp .9s ease .4s forwards;
+}
+.cover h1 em{font-style:italic;color:var(--mint);}
+
+.cover-sub{
+  font-family:'Noto Serif TC',serif;
+  font-size:clamp(.95rem,2vw,1.3rem);
+  color:rgba(168,203,186,.7);letter-spacing:.35em;
+  margin-bottom:36px;
+  opacity:0;animation:fadeUp .9s ease .6s forwards;
+}
+
+/* budget strip on cover */
+.cover-budget{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;
+  opacity:0;animation:fadeUp .9s ease .8s forwards;
+}
+.cb-item{
+  display:flex;flex-direction:column;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(168,203,186,.2);
+  border-radius:12px;padding:12px 20px;
+  backdrop-filter:blur(6px);
+  min-width:120px;
+}
+.cb-label{font-size:.65rem;letter-spacing:.25em;color:var(--mint);margin-bottom:4px;font-family:'Noto Serif TC',serif;}
+.cb-val{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#fff;}
+.cb-note{font-size:.68rem;color:rgba(168,203,186,.5);margin-top:2px;}
+
+.cover-tags{
+  display:flex;flex-wrap:wrap;gap:10px;
+  opacity:0;animation:fadeUp .9s ease 1s forwards;
+}
+.ctag{
+  padding:7px 18px;border:1px solid rgba(107,155,126,.3);border-radius:30px;
+  font-size:.76rem;letter-spacing:.12em;color:var(--mint);
+  font-family:'Noto Serif TC',serif;
+}
+
+/* scroll indicator */
+.cover-scroll{
+  position:absolute;bottom:32px;right:clamp(28px,5vw,80px);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp .8s ease 1.2s forwards;
+  color:rgba(107,155,126,.5);font-size:.65rem;letter-spacing:.25em;
+  font-family:'Noto Serif TC',serif;
+}
+.scroll-bar{width:1px;height:48px;background:linear-gradient(to bottom,var(--sage),transparent);animation:scrollPulse 2s infinite;}
+
+/* ══ NAV ══ */
+nav{background:var(--white);border-bottom:1px solid var(--b1);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(20,30,24,.05);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 28px;}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--jade);padding:14px 0;white-space:nowrap;}
+.nav-links{display:flex;overflow-x:auto;}
+.nav-links a{padding:14px 16px;font-size:.76rem;letter-spacing:.14em;color:var(--muted);text-decoration:none;white-space:nowrap;font-family:'Noto Serif TC',serif;border-bottom:2px solid transparent;transition:color .3s,border-color .3s;}
+.nav-links a:hover{color:var(--jade);border-bottom-color:var(--sage);}
+
+/* ══ SECTIONS ══ */
+section{padding:clamp(60px,8vw,110px) 24px;}
+.container{max-width:1200px;margin:0 auto;}
+.ch-tag{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.4em;color:var(--sage);text-transform:uppercase;font-family:'Noto Serif TC',serif;margin-bottom:12px;}
+.ch-tag::before{content:'';display:block;width:22px;height:1px;background:var(--sage);}
+.sec-t{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.8rem);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:12px;}
+.sec-t em{font-style:italic;color:var(--jade);}
+.sec-l{font-size:.92rem;line-height:1.9;color:var(--muted);max-width:580px;margin-bottom:56px;font-family:'Noto Serif TC',serif;}
+
+/* fi = fade-in */
+.fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fi.on{opacity:1;transform:none;}
+
+/* ══ BUDGET BANNER ══ */
+.budget-banner{
+  background:linear-gradient(135deg,var(--deep) 0%,#1A3828 100%);
+  border-radius:20px;padding:32px 36px;margin-bottom:56px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0;
+  border:1px solid rgba(107,155,126,.2);
+}
+.bb-item{
+  padding:16px 20px;border-right:1px solid rgba(107,155,126,.12);
+  display:flex;flex-direction:column;
+}
+.bb-item:last-child{border-right:none;}
+.bb-lbl{font-size:.65rem;letter-spacing:.25em;color:var(--mint);margin-bottom:6px;font-family:'Noto Serif TC',serif;text-transform:uppercase;}
+.bb-val{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;line-height:1;margin-bottom:3px;}
+.bb-unit{font-size:.72rem;color:rgba(168,203,186,.5);font-family:'Noto Serif TC',serif;}
+@media(max-width:600px){.budget-banner{grid-template-columns:1fr 1fr;}.bb-item{border-right:none;border-bottom:1px solid rgba(107,155,126,.12);}.bb-item:nth-child(odd){border-right:1px solid rgba(107,155,126,.12);}}
+
+/* ══ DAY/NIGHT ITINERARY ══ */
+#ch1{background:var(--white);}
+.day-block{margin-bottom:48px;border-radius:24px;overflow:hidden;border:1px solid var(--b1);}
+.db-header{
+  padding:24px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.db-header.day-hd{background:linear-gradient(135deg,#2B6A7C 0%,#1A4A5C 100%);}
+.db-header.night-hd{background:linear-gradient(135deg,var(--deep) 0%,#0D1B2A 100%);}
+.db-left{}
+.db-daynum{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:rgba(255,255,255,.9);line-height:1;}
+.db-title{font-family:'Noto Serif TC',serif;font-size:.82rem;letter-spacing:.2em;color:rgba(168,203,186,.7);margin-top:2px;}
+.db-right{display:flex;gap:10px;flex-wrap:wrap;}
+.db-badge{
+  padding:6px 14px;border-radius:20px;font-size:.72rem;letter-spacing:.08em;
+  font-family:'Noto Serif TC',serif;
+}
+.day-badge{background:rgba(123,184,212,.15);color:#A8D8EC;border:1px solid rgba(123,184,212,.25);}
+.night-badge{background:rgba(107,155,126,.15);color:var(--mint);border:1px solid rgba(107,155,126,.25);}
+
+.db-body{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);}
+@media(max-width:700px){.db-body{grid-template-columns:1fr;}}
+
+.db-half{padding:28px 32px;}
+.db-half-title{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Noto Serif TC',serif;font-size:.75rem;letter-spacing:.25em;
+  text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;
+  border-bottom:1px dashed rgba(107,155,126,.2);
+}
+.db-half-title .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-day{background:var(--sky);}
+.dot-night{background:var(--sage);}
+.day-col .db-half-title{color:var(--sky);}
+.night-col .db-half-title{color:var(--sage);}
+.day-col{border-right:1px solid rgba(107,155,126,.1);}
+
+.tl{list-style:none;}
+.tl li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(107,155,126,.12);font-size:.86rem;line-height:1.65;}
+.tl li:last-child{border-bottom:none;}
+.t-time{flex-shrink:0;min-width:46px;font-size:.67rem;letter-spacing:.06em;color:var(--muted);padding-top:3px;font-family:'Noto Serif TC',serif;}
+.t-time.day-t{color:var(--sky);}
+.t-time.night-t{color:var(--sage);}
+.t-info strong{display:block;font-weight:500;color:var(--dark);font-family:'Noto Serif TC',serif;font-size:.87rem;}
+.t-info small{color:var(--muted);font-size:.78rem;}
+.t-info .price{font-size:.74rem;color:var(--gold);margin-top:2px;font-weight:500;}
+
+/* ══ DAY/NIGHT SPLIT LABEL ══ */
+.dn-legend{display:flex;gap:24px;margin-bottom:32px;flex-wrap:wrap;}
+.dn-item{display:flex;align-items:center;gap:8px;font-size:.8rem;font-family:'Noto Serif TC',serif;color:var(--muted);}
+.dn-item .dot{width:10px;height:10px;border-radius:50%;}
+
+/* ══ HOTELS & FOOD ══ */
+.hf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px;}
+@media(max-width:700px){.hf-grid{grid-template-columns:1fr;}}
+.hf-block{border-radius:20px;padding:30px 28px;border:1px solid var(--b1);}
+.hf-block.hotel{background:linear-gradient(145deg,var(--dark),#1E3528);}
+.hf-block.food{background:linear-gradient(145deg,var(--warm),#EDE4D0);}
+.hf-lbl{font-size:.67rem;letter-spacing:.35em;text-transform:uppercase;font-family:'Noto Serif TC',serif;margin-bottom:20px;}
+.hotel .hf-lbl{color:var(--mint);}
+.food .hf-lbl{color:var(--jade);}
+.hi,.fi2{padding:13px 0;border-bottom:1px solid rgba(107,155,126,.1);}
+.hi:last-child,.fi2:last-child{border-bottom:none;}
+.h-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#fff;margin-bottom:2px;}
+.h-star{color:var(--stone);font-size:.74rem;margin-bottom:3px;}
+.h-note{font-size:.78rem;color:rgba(168,203,186,.5);}
+.h-price{font-size:.74rem;color:var(--lgold);margin-top:3px;font-weight:500;}
+.f-name{font-family:'Noto Serif TC',serif;font-size:.93rem;font-weight:500;color:var(--dark);margin-bottom:2px;}
+.f-note{font-size:.78rem;color:var(--muted);}
+.f-price{font-size:.74rem;color:var(--jade);margin-top:3px;font-weight:500;}
+
+/* ══ TRANSPORT ══ */
+#ch2{background:var(--mist);}
+
+/* Flight route visual */
+.flight-strip{
+  background:linear-gradient(135deg,var(--dark) 0%,#1A3828 100%);
+  border-radius:20px;padding:32px 36px;margin-bottom:48px;
+  border:1px solid rgba(107,155,126,.15);
+  display:flex;align-items:center;gap:0;flex-wrap:wrap;
+}
+.fs-airport{text-align:center;flex:1;min-width:100px;}
+.fs-code{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:#fff;line-height:1;}
+.fs-name{font-size:.72rem;letter-spacing:.15em;color:var(--mint);font-family:'Noto Serif TC',serif;margin-top:4px;}
+.fs-city{font-size:.8rem;color:rgba(168,203,186,.5);margin-top:2px;}
+.fs-mid{flex:2;min-width:180px;text-align:center;padding:0 16px;}
+.fs-line{height:1px;background:linear-gradient(90deg,transparent,var(--sage),transparent);margin-bottom:10px;}
+.fs-plane{font-size:1.6rem;margin-bottom:6px;}
+.fs-info{font-size:.78rem;color:var(--mint);font-family:'Noto Serif TC',serif;letter-spacing:.1em;}
+.fs-airlines{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;}
+.fs-al{padding:4px 12px;border:1px solid rgba(107,155,126,.2);border-radius:20px;font-size:.7rem;color:rgba(168,203,186,.6);font-family:'Noto Serif TC',serif;}
+
+/* Transport step cards */
+.ts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:48px;}
+.ts-card{
+  background:var(--white);border-radius:16px;
+  border:1px solid var(--b1);overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.ts-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,30,24,.07);}
+.ts-top{
+  padding:16px 20px;display:flex;justify-content:space-between;align-items:center;
+}
+.ts-icon{font-size:1.8rem;}
+.ts-badge{
+  padding:4px 12px;border-radius:20px;font-size:.68rem;
+  font-family:'Noto Serif TC',serif;letter-spacing:.08em;
+}
+.badge-green{background:rgba(74,124,111,.1);color:var(--jade);border:1px solid rgba(74,124,111,.2);}
+.badge-gold{background:rgba(184,147,90,.1);color:var(--gold);border:1px solid rgba(184,147,90,.2);}
+.badge-blue{background:rgba(123,184,212,.1);color:var(--sky);border:1px solid rgba(123,184,212,.2);}
+.ts-body{padding:4px 20px 20px;}
+.ts-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:6px;}
+.ts-desc{font-size:.83rem;line-height:1.75;color:var(--muted);margin-bottom:10px;}
+.ts-detail{display:flex;flex-wrap:wrap;gap:8px;}
+.tsd{
+  padding:4px 12px;background:var(--mist);border-radius:8px;
+  font-size:.72rem;color:var(--text);font-family:'Noto Serif TC',serif;
+}
+.tsd strong{color:var(--jade);}
+.ts-tip{
+  margin-top:10px;padding:8px 12px;
+  background:rgba(107,155,126,.06);border-left:3px solid var(--sage);
+  border-radius:0 8px 8px 0;font-size:.78rem;color:var(--jade);
+  font-family:'Noto Serif TC',serif;
+}
+
+/* Route map visual */
+.route-map{
+  background:var(--white);border-radius:20px;border:1px solid var(--b1);
+  padding:32px;margin-bottom:16px;overflow-x:auto;
+}
+.route-title{font-family:'Noto Serif TC',serif;font-size:.75rem;letter-spacing:.2em;color:var(--muted);margin-bottom:24px;text-transform:uppercase;}
+.route-flow{display:flex;align-items:center;gap:0;min-width:600px;}
+.route-node{
+  flex:1;text-align:center;
+  padding:12px 8px;
+}
+.rn-icon{font-size:1.6rem;margin-bottom:6px;}
+.rn-name{font-family:'Noto Serif TC',serif;font-size:.8rem;color:var(--dark);font-weight:500;margin-bottom:3px;}
+.rn-note{font-size:.68rem;color:var(--muted);}
+.route-arrow{
+  flex-shrink:0;width:60px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+.ra-line{height:2px;width:44px;background:linear-gradient(90deg,var(--sage),var(--mint));border-radius:2px;margin-bottom:4px;}
+.ra-time{font-size:.68rem;color:var(--sage);font-family:'Noto Serif TC',serif;white-space:nowrap;}
+.ra-cost{font-size:.65rem;color:var(--gold);}
+
+/* Budget table */
+.btable{width:100%;border-collapse:collapse;font-size:.84rem;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(20,30,24,.05);}
+.btable thead{background:var(--deep);color:var(--mint);}
+.btable th{padding:13px 18px;text-align:left;font-weight:300;letter-spacing:.1em;font-family:'Noto Serif TC',serif;}
+.btable td{padding:11px 18px;border-bottom:1px solid var(--b1);background:var(--white);}
+.btable tr:last-child td{border-bottom:none;}
+.btable tr:nth-child(even) td{background:var(--mist);}
+.btable .total td{background:rgba(43,74,54,.06)!important;font-family:'Noto Serif TC',serif;font-weight:500;color:var(--dark);}
+.btable .highlight{color:var(--jade);font-weight:500;}
+
+/* ══ SPA CHAPTER ══ */
+#ch3{background:var(--dark);}
+#ch3 .sec-t{color:#fff;}
+#ch3 .sec-t em{color:var(--mint);}
+#ch3 .ch-tag{color:var(--mint);}
+#ch3 .ch-tag::before{background:var(--mint);}
+#ch3 .sec-l{color:rgba(168,203,186,.5);}
+
+.spa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-bottom:64px;}
+.spa-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(107,155,126,.15);
+  border-radius:18px;overflow:hidden;
+  transition:transform .3s,border-color .3s,background .3s;
+}
+.spa-card:hover{transform:translateY(-5px);border-color:rgba(107,155,126,.4);background:rgba(74,124,111,.1);}
+.spa-illo{height:100px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;}
+.spa-illo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,var(--dark));}
+.spa-body{padding:18px 20px 22px;}
+.sp-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#fff;margin-bottom:2px;}
+.sp-zh{font-size:.72rem;letter-spacing:.12em;color:var(--mint);margin-bottom:8px;font-family:'Noto Serif TC',serif;}
+.sp-desc{font-size:.81rem;line-height:1.72;color:rgba(168,203,186,.5);margin-bottom:10px;}
+.sp-price{font-size:.78rem;color:var(--lgold);font-weight:500;}
+.sp-twd{font-size:.72rem;color:rgba(219,185,110,.5);margin-top:2px;}
+
+/* Top venues */
+.venues-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:56px;}
+.vc{
+  background:rgba(255,255,255,.03);border:1px solid var(--b2);
+  border-radius:16px;padding:24px;
+  transition:border-color .3s,background .3s;
+}
+.vc:hover{border-color:rgba(184,147,90,.4);background:rgba(184,147,90,.05);}
+.vc-rank{font-size:.7rem;letter-spacing:.25em;color:var(--lgold);margin-bottom:8px;font-family:'Noto Serif TC',serif;}
+.vc-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#fff;margin-bottom:3px;}
+.vc-area{font-size:.72rem;color:var(--mint);margin-bottom:10px;letter-spacing:.1em;font-family:'Noto Serif TC',serif;}
+.vc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.vc-tag{padding:3px 10px;border-radius:20px;background:rgba(74,124,111,.12);font-size:.7rem;color:var(--mint);border:1px solid rgba(74,124,111,.18);}
+.vc-price{font-size:.8rem;color:var(--lgold);font-weight:500;}
+.vc-twd{font-size:.73rem;color:rgba(219,185,110,.5);margin-top:2px;}
+.vc-note{font-size:.76rem;color:rgba(168,203,186,.38);margin-top:6px;line-height:1.6;}
+
+/* spa tips */
+.spa-tips{
+  background:linear-gradient(135deg,rgba(74,124,111,.12),rgba(20,30,24,.5));
+  border:1px solid rgba(107,155,126,.18);border-radius:20px;
+  padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px;
+}
+@media(max-width:700px){.spa-tips{grid-template-columns:1fr;}}
+.st-head{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:#fff;margin-bottom:18px;grid-column:1/-1;}
+.st-col h4{font-family:'Noto Serif TC',serif;font-size:.72rem;letter-spacing:.2em;color:var(--mint);margin-bottom:12px;text-transform:uppercase;}
+.st-col ul{list-style:none;}
+.st-col li{font-size:.82rem;line-height:1.8;color:rgba(168,203,186,.6);padding:3px 0;display:flex;gap:8px;}
+.st-col li::before{content:'◦';color:var(--sage);flex-shrink:0;}
+
+/* ══ CHAPTER 4: SIGHTS / TIPS ══ */
+#ch4{background:var(--white);}
+
+.sights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-bottom:48px;}
+.sc{border-radius:16px;overflow:hidden;border:1px solid var(--b1);background:var(--cream);transition:transform .3s,box-shadow .3s;}
+.sc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,30,24,.06);}
+.sc-top{height:90px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;}
+.sc-body{padding:16px 18px 20px;}
+.sc-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);margin-bottom:5px;}
+.sc-desc{font-size:.8rem;line-height:1.7;color:var(--muted);margin-bottom:8px;}
+.sc-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.68rem;background:rgba(61,114,96,.07);color:var(--jade);border:1px solid rgba(61,114,96,.15);}
+
+.souv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:14px;margin-bottom:56px;}
+.sv{background:var(--mist);border-radius:14px;padding:18px;border:1px solid var(--b1);transition:background .3s,transform .3s;}
+.sv:hover{background:var(--warm);transform:translateY(-3px);}
+.sv-icon{font-size:1.7rem;margin-bottom:8px;}
+.sv-name{font-family:'Noto Serif TC',serif;font-size:.88rem;font-weight:500;color:var(--dark);margin-bottom:3px;}
+.sv-note{font-size:.76rem;color:var(--muted);line-height:1.55;}
+.sv-price{font-size:.72rem;color:var(--jade);margin-top:5px;font-weight:500;}
+.sv-twd{font-size:.68rem;color:rgba(107,155,126,.55);}
+
+/* pre-trip tips */
+.ptips{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:40px;}
+.pt{border-radius:16px;padding:24px;border:1px solid var(--b1);background:var(--cream);transition:transform .3s;}
+.pt:hover{transform:translateY(-3px);}
+.pt-icon{font-size:1.7rem;margin-bottom:10px;}
+.pt-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);margin-bottom:8px;}
+.pt-list{list-style:none;}
+.pt-list li{font-size:.81rem;line-height:1.75;color:var(--muted);padding:3px 0;display:flex;gap:7px;}
+.pt-list li::before{content:'›';color:var(--sage);flex-shrink:0;}
+
+/* emergency */
+.emg{background:linear-gradient(135deg,var(--deep),var(--dark));border-radius:20px;padding:36px;}
+.emg h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:#fff;margin-bottom:24px;}
+.emg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.ei{background:rgba(255,255,255,.06);border-radius:10px;padding:14px;border:1px solid rgba(107,155,126,.15);}
+.ei-l{font-size:.65rem;letter-spacing:.22em;color:var(--mint);margin-bottom:5px;font-family:'Noto Serif TC',serif;}
+.ei-v{font-size:.9rem;font-weight:400;color:#fff;font-family:'Noto Serif TC',serif;}
+.ei-n{font-size:.7rem;color:rgba(168,203,186,.38);margin-top:3px;}
+
+/* ══ ORNAMENT ══ */
+.orn{display:flex;align-items:center;gap:16px;margin:0 auto 48px;max-width:240px;}
+.orn span{flex:1;height:1px;background:var(--b1);}
+.orn i{font-style:normal;color:var(--sage);}
+
+/* ══ BUBBLE BATH ══ */
+.bubble-hero{
+  position:relative;border-radius:28px;overflow:hidden;
+  padding:60px 40px;margin-bottom:56px;
+  background:linear-gradient(135deg,#0D1B2A 0%,#1A2E3A 40%,#0D2030 100%);
+  border:1px solid rgba(123,184,212,.2);
+}
+.bubble-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%,rgba(123,184,212,.12) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 80% at 10% 20%,rgba(107,155,126,.1) 0%,transparent 60%);
+}
+/* animated bubbles */
+.bubbles-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.bbl{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.25),rgba(123,184,212,.08));
+  border:1px solid rgba(123,184,212,.2);
+  animation:bubbleRise linear infinite;
+}
+@keyframes bubbleRise{
+  0%{transform:translateY(100%) scale(.6);opacity:0;}
+  10%{opacity:1;}
+  90%{opacity:.6;}
+  100%{transform:translateY(-120%) scale(1);opacity:0;}
+}
+.bubble-content{position:relative;z-index:2;}
+.bb-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:6px 16px;border-radius:20px;
+  background:rgba(123,184,212,.1);border:1px solid rgba(123,184,212,.2);
+  font-size:.72rem;letter-spacing:.25em;color:var(--sky);
+  font-family:'Noto Serif TC',serif;margin-bottom:20px;
+}
+.bb-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,5vw,4rem);font-weight:300;
+  color:#fff;line-height:1.1;margin-bottom:8px;
+}
+.bb-title em{font-style:italic;color:var(--sky);}
+.bb-subtitle{
+  font-family:'Noto Serif TC',serif;font-size:.88rem;
+  letter-spacing:.2em;color:rgba(123,184,212,.6);margin-bottom:28px;
+}
+.bb-intro{
+  font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.6);
+  max-width:620px;margin-bottom:36px;font-family:'Noto Serif TC',serif;
+}
+.bb-stats{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:0;}
+.bb-stat{
+  background:rgba(255,255,255,.06);border:1px solid rgba(123,184,212,.18);
+  border-radius:12px;padding:14px 20px;min-width:130px;
+}
+.bb-stat-lbl{font-size:.65rem;letter-spacing:.22em;color:var(--sky);margin-bottom:5px;font-family:'Noto Serif TC',serif;}
+.bb-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;line-height:1;}
+.bb-stat-note{font-size:.68rem;color:rgba(123,184,212,.45);margin-top:3px;}
+
+/* bubble bath steps */
+.bubble-flow{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:2px;margin-bottom:56px;
+  background:rgba(123,184,212,.06);border-radius:20px;overflow:hidden;
+  border:1px solid rgba(123,184,212,.12);
+}
+.bf-step{
+  padding:28px 22px;
+  background:rgba(13,27,42,.4);
+  transition:background .3s;
+  position:relative;
+}
+.bf-step:hover{background:rgba(123,184,212,.08);}
+.bf-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.5rem;color:rgba(123,184,212,.2);
+  line-height:1;margin-bottom:10px;
+}
+.bf-icon{font-size:1.6rem;margin-bottom:10px;}
+.bf-title{font-family:'Noto Serif TC',serif;font-size:.88rem;font-weight:500;color:#fff;margin-bottom:6px;}
+.bf-desc{font-size:.78rem;line-height:1.7;color:rgba(123,184,212,.55);}
+
+/* bubble bath packages */
+.bubble-pkgs{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;margin-bottom:48px;
+}
+.bpkg{
+  border-radius:18px;overflow:hidden;
+  border:1px solid rgba(123,184,212,.15);
+  background:rgba(255,255,255,.03);
+  transition:transform .3s,border-color .3s,background .3s;
+}
+.bpkg:hover{transform:translateY(-5px);border-color:rgba(123,184,212,.4);background:rgba(123,184,212,.07);}
+.bpkg.featured{border-color:rgba(219,185,110,.4);background:rgba(184,147,90,.06);}
+.bpkg.featured:hover{border-color:rgba(219,185,110,.7);}
+.bpkg-top{
+  padding:20px 22px 16px;
+  border-bottom:1px solid rgba(123,184,212,.1);
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.bpkg.featured .bpkg-top{border-bottom-color:rgba(219,185,110,.15);}
+.bpkg-icon{font-size:2rem;}
+.bpkg-badge{
+  padding:3px 10px;border-radius:20px;font-size:.65rem;
+  font-family:'Noto Serif TC',serif;letter-spacing:.08em;
+}
+.badge-sky{background:rgba(123,184,212,.12);color:var(--sky);border:1px solid rgba(123,184,212,.2);}
+.badge-star{background:rgba(219,185,110,.12);color:var(--lgold);border:1px solid rgba(219,185,110,.2);}
+.bpkg-body{padding:18px 22px 22px;}
+.bpkg-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;margin-bottom:3px;}
+.bpkg-zh{font-size:.72rem;letter-spacing:.12em;color:var(--sky);margin-bottom:10px;font-family:'Noto Serif TC',serif;}
+.bpkg.featured .bpkg-zh{color:var(--lgold);}
+.bpkg-includes{list-style:none;margin-bottom:14px;}
+.bpkg-includes li{font-size:.8rem;color:rgba(168,203,186,.6);padding:3px 0;display:flex;gap:7px;line-height:1.6;}
+.bpkg-includes li::before{content:'◦';color:var(--sky);flex-shrink:0;}
+.bpkg.featured .bpkg-includes li::before{color:var(--lgold);}
+.bpkg-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;margin-bottom:2px;}
+.bpkg-twd{font-size:.73rem;color:rgba(219,185,110,.6);}
+.bpkg-duration{font-size:.72rem;color:rgba(168,203,186,.4);margin-top:4px;}
+
+/* bubble bath venues */
+.bubble-venues{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;margin-bottom:48px;
+}
+.bv{
+  background:rgba(255,255,255,.03);border:1px solid rgba(123,184,212,.15);
+  border-radius:16px;padding:22px;
+  transition:border-color .3s,background .3s;
+}
+.bv:hover{border-color:rgba(123,184,212,.4);background:rgba(123,184,212,.06);}
+.bv-rank{font-size:.68rem;letter-spacing:.22em;color:var(--sky);margin-bottom:7px;font-family:'Noto Serif TC',serif;}
+.bv-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;margin-bottom:3px;}
+.bv-area{font-size:.72rem;color:rgba(123,184,212,.6);margin-bottom:10px;letter-spacing:.08em;font-family:'Noto Serif TC',serif;}
+.bv-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px;}
+.bv-tag{padding:2px 9px;border-radius:20px;background:rgba(123,184,212,.08);font-size:.68rem;color:var(--sky);border:1px solid rgba(123,184,212,.15);}
+.bv-price{font-size:.8rem;color:var(--lgold);font-weight:500;}
+.bv-twd{font-size:.72rem;color:rgba(219,185,110,.5);margin-top:2px;}
+.bv-note{font-size:.75rem;color:rgba(168,203,186,.38);margin-top:6px;line-height:1.6;}
+
+/* bubble do/don't */
+.bubble-rules{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+@media(max-width:700px){.bubble-rules{grid-template-columns:1fr;}}
+.br-block{border-radius:16px;padding:28px;}
+.br-block.do{background:rgba(107,155,126,.08);border:1px solid rgba(107,155,126,.2);}
+.br-block.dont{background:rgba(184,64,64,.05);border:1px solid rgba(184,64,64,.15);}
+.br-title{font-family:'Noto Serif TC',serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;}
+.br-block.do .br-title{color:var(--mint);}
+.br-block.dont .br-title{color:#E8897C;}
+.br-list{list-style:none;}
+.br-list li{font-size:.83rem;line-height:1.78;color:rgba(168,203,186,.65);padding:3px 0;display:flex;gap:8px;}
+.br-block.dont .br-list li{color:rgba(240,180,170,.55);}
+.br-list li .mk{flex-shrink:0;font-size:.8rem;}
+
+/* ══ FOOTER ══ */
+footer{background:var(--dark);text-align:center;padding:56px 24px;border-top:1px solid rgba(107,155,126,.1);}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--mint);margin-bottom:10px;}
+.ft-note{font-size:.72rem;color:rgba(107,155,126,.3);letter-spacing:.2em;font-family:'Noto Serif TC',serif;}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+@keyframes scrollPulse{0%,100%{opacity:.3;}50%{opacity:.8;}}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- ════════════════════ FULL-PAGE COVER ════════════════════ -->
+<header class="cover" id="top">
+  <div class="cover-bg"></div>
+  <div class="cover-stars"></div>
+  <div class="cover-bamboo"></div>
+
+  <div class="cover-content">
+    <div class="cover-eyebrow">
+      <span></span>
+      <p>Taiwan TPE → Hanoi HAN · 2025 完全攻略</p>
+    </div>
+
+    <h1>河內<br><em>Spa & 養生</em><br>深度之旅</h1>
+    <p class="cover-sub">白天探古都 · 入夜享療癒</p>
+
+    <!-- Budget summary on cover -->
+    <div class="cover-budget">
+      <div class="cb-item">
+        <span class="cb-label">機票預算</span>
+        <span class="cb-val">NT$4,500</span>
+        <span class="cb-note">來回 · 早鳥優惠</span>
+      </div>
+      <div class="cb-item">
+        <span class="cb-label">住宿/晚</span>
+        <span class="cb-val">NT$1,800</span>
+        <span class="cb-note">三星起 · 每晚均價</span>
+      </div>
+      <div class="cb-item">
+        <span class="cb-label">Spa 套餐</span>
+        <span class="cb-val">NT$500</span>
+        <span class="cb-note">起 · 90分鐘</span>
+      </div>
+      <div class="cb-item">
+        <span class="cb-label">四天總預算</span>
+        <span class="cb-val">NT$18,000</span>
+        <span class="cb-note">含機票 · 中等消費</span>
+      </div>
+    </div>
+
+    <div class="cover-tags">
+      <span class="ctag">✈ 桃園出發</span>
+      <span class="ctag">☀ 白天景點</span>
+      <span class="ctag">🌙 夜間 Spa</span>
+      <span class="ctag">🏨 三星以上住宿</span>
+      <span class="ctag">🗺 交通全攻略</span>
+    </div>
+  </div>
+
+  <div class="cover-scroll">
+    <div class="scroll-bar"></div>
+    SCROLL
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Hanoi Wellness 2025</div>
+    <div class="nav-links">
+      <a href="#ch1">行程規劃</a>
+      <a href="#ch2">交通 & 預算</a>
+      <a href="#ch3">Spa 攻略</a>
+      <a href="#ch4">景點 & 叮嚀</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════ CHAPTER 1 ════════════════════ -->
+<section id="ch1">
+  <div class="container">
+    <p class="ch-tag fi">Chapter One</p>
+    <h2 class="sec-t fi">行程規劃<br><em>白天景點 · 夜晚 Spa</em></h2>
+    <p class="sec-l fi">白天漫遊千年古都，感受歷史文化脈動；入夜後走進日本街 Spa 會館，讓身心在芳香中徹底沉澱放鬆。</p>
+
+    <div class="dn-legend fi">
+      <div class="dn-item"><div class="dot dot-day"></div><span>白天景點行程</span></div>
+      <div class="dn-item"><div class="dot dot-night"></div><span>夜間 Spa 療程</span></div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-block fi">
+      <div class="db-header day-hd">
+        <div class="db-left">
+          <div class="db-daynum">Day 01</div>
+          <div class="db-title">抵達河內 · 老城初探 · 泡泡浴初體驗</div>
+        </div>
+        <div class="db-right">
+          <span class="db-badge day-badge">☀ 老城漫步</span>
+          <span class="db-badge night-badge">🛁 泡泡浴初體驗</span>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-half day-col">
+          <div class="db-half-title"><div class="dot dot-day"></div>白天行程</div>
+          <ul class="tl">
+            <li><span class="t-time day-t">07:00</span><div class="t-info"><strong>桃園 TPE 出發</strong><small>越南航空/長榮/虎航直飛，約2小時45分</small></div></li>
+            <li><span class="t-time day-t">10:30</span><div class="t-info"><strong>抵達 Nội Bài 機場</strong><small>入境、換匯、購SIM卡</small><div class="price">換匯建議：NT$5,000 ≈ 4,250,000 VND</div></div></li>
+            <li><span class="t-time day-t">12:00</span><div class="t-info"><strong>搭86號公車進市區</strong><small>約50分鐘抵還劍湖，票價30,000 VND ≈ NT$35</small></div></li>
+            <li><span class="t-time day-t">13:00</span><div class="t-info"><strong>飯店 Check-in + 午餐</strong><small>Phở Thìn 河粉，50,000 VND ≈ NT$58</small></div></li>
+            <li><span class="t-time day-t">15:00</span><div class="t-info"><strong>還劍湖 & 玉山祠</strong><small>免費入場，湖畔漫步</small></div></li>
+            <li><span class="t-time day-t">17:00</span><div class="t-info"><strong>36條街老城區漫步</strong><small>感受百年商街氣息，採購初期手信</small></div></li>
+          </ul>
+        </div>
+        <div class="db-half night-col">
+          <div class="db-half-title"><div class="dot dot-night"></div>夜間 Spa & 晚餐</div>
+          <ul class="tl">
+            <li><span class="t-time night-t">19:00</span><div class="t-info"><strong>晚餐：同春夜市</strong><small>烤串、炸春捲、蛋咖啡</small><div class="price">約80,000–120,000 VND ≈ NT$94–141</div></div></li>
+            <li><span class="t-time night-t">20:30</span><div class="t-info"><strong>🛁 日本街泡泡浴初體驗</strong><small>Hana Bubble Bath House · 玫瑰花瓣基礎套餐 · 60分鐘</small><div class="price">500,000–650,000 VND ≈ NT$588–765 · 含腳底按摩</div></div></li>
+            <li><span class="t-time night-t">22:00</span><div class="t-info"><strong>返飯店休息</strong><small>搭GrabCar · 泡浴後身心放鬆，乘車最舒適</small><div class="price">50,000–80,000 VND ≈ NT$59–94</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block fi">
+      <div class="db-header night-hd">
+        <div class="db-left">
+          <div class="db-daynum">Day 02</div>
+          <div class="db-title">日本街探索 · 頂級精油 Spa 主題日</div>
+        </div>
+        <div class="db-right">
+          <span class="db-badge day-badge">☀ 西湖 & 日本街</span>
+          <span class="db-badge night-badge">🌙 90min 精油按摩</span>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-half day-col">
+          <div class="db-half-title"><div class="dot dot-day"></div>白天行程</div>
+          <ul class="tl">
+            <li><span class="t-time day-t">08:30</span><div class="t-info"><strong>西湖晨間散步</strong><small>湖畔朝霞，免費 · 步行即達</small></div></li>
+            <li><span class="t-time day-t">10:00</span><div class="t-info"><strong>日本街咖啡館巡禮</strong><small>和風甜點 + 精品小物選購</small><div class="price">咖啡+甜點 約150,000 VND ≈ NT$176</div></div></li>
+            <li><span class="t-time day-t">12:00</span><div class="t-info"><strong>午餐：日式拉麵 or 越式米線</strong><small>日本街周邊選擇豐富</small><div class="price">120,000–180,000 VND ≈ NT$141–212</div></div></li>
+            <li><span class="t-time day-t">14:00</span><div class="t-info"><strong>越南民族學博物館</strong><small>CNN推薦，54個民族文化</small><div class="price">入場費 40,000 VND ≈ NT$47</div></div></li>
+            <li><span class="t-time day-t">16:30</span><div class="t-info"><strong>西湖黃昏湖畔</strong><small>日落美景，Spa 前放鬆心情</small></div></li>
+          </ul>
+        </div>
+        <div class="db-half night-col">
+          <div class="db-half-title"><div class="dot dot-night"></div>夜間 Spa & 晚餐</div>
+          <ul class="tl">
+            <li><span class="t-time night-t">18:00</span><div class="t-info"><strong>🌿 頂級芳香精油按摩 90分鐘</strong><small>Sen Spa · 日本街 · 建議提前預約</small><div class="price">700,000 VND ≈ NT$823 | 含精油+熱敷</div></div></li>
+            <li><span class="t-time night-t">20:00</span><div class="t-info"><strong>晚餐：西湖蝦醬米粉</strong><small>道地河內風味，Spa後步行享用</small><div class="price">80,000 VND ≈ NT$94</div></div></li>
+            <li><span class="t-time night-t">21:30</span><div class="t-info"><strong>西湖夜景散步</strong><small>燈光倒映湖面，療癒感十足</small></div></li>
+            <li><span class="t-time night-t">22:30</span><div class="t-info"><strong>返飯店 · 早睡養顏</strong><small>Grab 返回，精油按摩後好眠</small></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block fi">
+      <div class="db-header day-hd">
+        <div class="db-left">
+          <div class="db-daynum">Day 03</div>
+          <div class="db-title">文化深遊 · 草藥熱敷 + 熱石雙療程</div>
+        </div>
+        <div class="db-right">
+          <span class="db-badge day-badge">☀ 歷史文化</span>
+          <span class="db-badge night-badge">🌙 草藥熱石雙享</span>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-half day-col">
+          <div class="db-half-title"><div class="dot dot-day"></div>白天行程</div>
+          <ul class="tl">
+            <li><span class="t-time day-t">08:30</span><div class="t-info"><strong>胡志明陵寢 & 一柱廟</strong><small>免費參觀（外觀） / 早到免排隊</small></div></li>
+            <li><span class="t-time day-t">10:00</span><div class="t-info"><strong>升龍皇城 UNESCO遺產</strong><small>越南千年政治核心</small><div class="price">入場費 30,000 VND ≈ NT$35</div></div></li>
+            <li><span class="t-time day-t">12:30</span><div class="t-info"><strong>午餐：Bún Chả 烤肉米線</strong><small>歐巴馬打卡名店</small><div class="price">60,000 VND ≈ NT$71</div></div></li>
+            <li><span class="t-time day-t">14:30</span><div class="t-info"><strong>文廟 – 國子監</strong><small>越南第一學府，千年儒學聖地</small><div class="price">入場費 30,000 VND ≈ NT$35</div></div></li>
+            <li><span class="t-time day-t">16:30</span><div class="t-info"><strong>同春市場採購手信</strong><small>咖啡、絲巾、香皂一次買齊</small><div class="price">預算 NT$500–1,500 依購物量</div></div></li>
+          </ul>
+        </div>
+        <div class="db-half night-col">
+          <div class="db-half-title"><div class="dot dot-night"></div>夜間 Spa & 晚餐</div>
+          <ul class="tl">
+            <li><span class="t-time night-t">18:30</span><div class="t-info"><strong>晚餐：Chả Cá 薑黃炸魚</strong><small>河內百年名菜，老城必吃</small><div class="price">250,000 VND/人 ≈ NT$294</div></div></li>
+            <li><span class="t-time night-t">20:00</span><div class="t-info"><strong>🪨 草藥熱敷 + 熱石雙套餐</strong><small>L'Apothiquaire Spa · 法式私密空間</small><div class="price">1,200,000 VND ≈ NT$1,412 · 120分鐘</div></div></li>
+            <li><span class="t-time night-t">22:30</span><div class="t-info"><strong>屋頂酒吧 Bia Hơi</strong><small>河內生啤 + 夜景，Spa後小酌放鬆</small><div class="price">本地啤酒 15,000 VND ≈ NT$18/杯</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-block fi">
+      <div class="db-header night-hd">
+        <div class="db-left">
+          <div class="db-daynum">Day 04</div>
+          <div class="db-title">還劍湖晨光 · 出發前最後肩頸按摩 · 返台</div>
+        </div>
+        <div class="db-right">
+          <span class="db-badge day-badge">☀ 還劍湖 & 市場</span>
+          <span class="db-badge night-badge">🌙 30min 肩頸</span>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-half day-col">
+          <div class="db-half-title"><div class="dot dot-day"></div>白天行程</div>
+          <ul class="tl">
+            <li><span class="t-time day-t">07:00</span><div class="t-info"><strong>還劍湖清晨漫步</strong><small>朝霞映湖，最美清晨 · 免費</small></div></li>
+            <li><span class="t-time day-t">08:00</span><div class="t-info"><strong>玉山祠參觀</strong><small>湖心古廟，靜謐神聖</small><div class="price">門票 30,000 VND ≈ NT$35</div></div></li>
+            <li><span class="t-time day-t">09:00</span><div class="t-info"><strong>早餐：Bánh Mì 法棍</strong><small>越南最著名的快速早餐</small><div class="price">35,000 VND ≈ NT$41</div></div></li>
+            <li><span class="t-time day-t">10:30</span><div class="t-info"><strong>🌿 出發前30分鐘肩頸紓壓</strong><small>Hanoi Mia Spa · 快速提神</small><div class="price">180,000 VND ≈ NT$212</div></div></li>
+            <li><span class="t-time day-t">12:00</span><div class="t-info"><strong>飯店 Check-out</strong><small>搭Grab前往機場，車程35–45分鐘</small><div class="price">GrabCar 機場 約200,000 VND ≈ NT$235</div></div></li>
+            <li><span class="t-time day-t">15:00</span><div class="t-info"><strong>抵機場辦理出境</strong><small>建議提前3小時抵達</small></div></li>
+          </ul>
+        </div>
+        <div class="db-half night-col">
+          <div class="db-half-title"><div class="dot dot-night"></div>返程資訊</div>
+          <ul class="tl">
+            <li><span class="t-time night-t">18:00</span><div class="t-info"><strong>河內 HAN 起飛</strong><small>約2小時45分</small></div></li>
+            <li><span class="t-time night-t">20:30</span><div class="t-info"><strong>抵達桃園 TPE</strong><small>完成身心療癒之旅</small></div></li>
+            <li><span class="t-time night-t">回台</span><div class="t-info"><strong>行李小提醒</strong><small>精油、魚露需托運；咖啡、茶可手提</small></div></li>
+            <li><span class="t-time night-t">備註</span><div class="t-info"><strong>四天帶回的不只手信</strong><small>還有肌膚的柔滑、肌肉的鬆軟，以及靈魂的充飽</small></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotels & Food -->
+    <div class="hf-grid fi">
+      <div class="hf-block hotel">
+        <div class="hf-lbl">✦ 住宿推薦（含台幣參考價）</div>
+        <div class="hi"><div class="h-name">Sofitel Legend Metropole</div><div class="h-star">★★★★★ 殖民地奢華</div><div class="h-price">約 NT$6,500–12,000 /晚 · 附Bamboo Spa優惠</div></div>
+        <div class="hi"><div class="h-name">Pan Pacific Hanoi</div><div class="h-star">★★★★★ 西湖絕景</div><div class="h-price">約 NT$4,500–8,000 /晚 · 湖景房首選</div></div>
+        <div class="hi"><div class="h-name">Silk Path Grand Hotel</div><div class="h-star">★★★★★ 現代奢華</div><div class="h-price">約 NT$3,800–7,000 /晚 · 屋頂泳池</div></div>
+        <div class="hi"><div class="h-name">Mövenpick Hotel Hanoi</div><div class="h-star">★★★★★ 國際品牌</div><div class="h-price">約 NT$3,500–6,000 /晚 · 含早餐優惠</div></div>
+        <div class="hi"><div class="h-name">La Siesta Diamond Hanoi</div><div class="h-star">★★★★ 設計精品</div><div class="h-price">約 NT$1,800–3,200 /晚 · 老城核心 CP值王</div></div>
+      </div>
+      <div class="hf-block food">
+        <div class="hf-lbl">🍜 美食推薦（VND & NT$ 雙標示）</div>
+        <div class="fi2"><div class="f-name">Phở Thìn 河內河粉始祖</div><div class="f-note">1955年創立，清燉骨湯濃郁</div><div class="f-price">50,000–80,000 VND ≈ NT$59–94</div></div>
+        <div class="fi2"><div class="f-name">Bún Chả Hương Liên</div><div class="f-note">烤豬肉米線，歐巴馬打卡名店</div><div class="f-price">60,000 VND ≈ NT$71</div></div>
+        <div class="fi2"><div class="f-name">Chả Cá Lã Vọng 薑黃炸魚</div><div class="f-note">百年老店，薑黃魚佐蒔蘿</div><div class="f-price">250,000 VND/人 ≈ NT$294</div></div>
+        <div class="fi2"><div class="f-name">Cà Phê Trứng 蛋咖啡</div><div class="f-note">河內獨創，香甜濃郁網美飲</div><div class="f-price">45,000–70,000 VND ≈ NT$53–82</div></div>
+        <div class="fi2"><div class="f-name">Bánh Mì 25 越南法棍</div><div class="f-note">皮脆餡豐，快速早餐首選</div><div class="f-price">30,000–45,000 VND ≈ NT$35–53</div></div>
+        <div class="fi2"><div class="f-name">Bún Bò Nam Bộ 南部牛肉米線</div><div class="f-note">乾拌式，Spa後補充能量首選</div><div class="f-price">65,000–90,000 VND ≈ NT$76–106</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CHAPTER 2: TRANSPORT + BUDGET ════════════════════ -->
+<section id="ch2">
+  <div class="container">
+    <p class="ch-tag fi">Chapter Two</p>
+    <h2 class="sec-t fi">交通全攻略<br><em>& 台幣預算</em>總覽</h2>
+    <p class="sec-l fi">從桃園出發到河內 Spa 會館，全程以大眾交通為主，每一段費用透明清楚。</p>
+
+    <!-- Flight strip -->
+    <div class="flight-strip fi">
+      <div class="fs-airport">
+        <div class="fs-code">TPE</div>
+        <div class="fs-name">桃園國際機場</div>
+        <div class="fs-city">台灣 · 台北</div>
+      </div>
+      <div class="fs-mid">
+        <div class="fs-line"></div>
+        <div class="fs-plane">✈</div>
+        <div class="fs-info">直飛 · 約 2小時45分</div>
+        <div class="fs-airlines">
+          <span class="fs-al">越南航空 VN</span>
+          <span class="fs-al">長榮航空 BR</span>
+          <span class="fs-al">越捷 VJ</span>
+          <span class="fs-al">虎航 IT</span>
+        </div>
+      </div>
+      <div class="fs-airport">
+        <div class="fs-code">HAN</div>
+        <div class="fs-name">內排國際機場</div>
+        <div class="fs-city">越南 · 河內</div>
+      </div>
+    </div>
+
+    <!-- Transport cards -->
+    <div class="ts-grid fi">
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">✈️</div><span class="ts-badge badge-blue">第一段</span></div>
+        <div class="ts-body">
+          <div class="ts-title">台北 → 河內（直飛）</div>
+          <div class="ts-desc">桃園TPE每日多班直飛，建議提早30天訂票享早鳥優惠。</div>
+          <div class="ts-detail">
+            <div class="tsd">飛行時間 <strong>2hr 45min</strong></div>
+            <div class="tsd">票價 <strong>NT$4,500–8,000</strong></div>
+            <div class="tsd">含稅來回</div>
+          </div>
+          <div class="ts-tip">💡 越捷/虎航促銷票最低可達 NT$3,200 來回（不含手提/托運行李）</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">🚌</div><span class="ts-badge badge-green">第二段</span></div>
+        <div class="ts-body">
+          <div class="ts-title">機場 → 市區（86號機場快線）</div>
+          <div class="ts-desc">落地後出航廈，搭86號公車直達還劍湖，班距15–20分鐘。</div>
+          <div class="ts-detail">
+            <div class="tsd">票價 <strong>30,000 VND ≈ NT$35</strong></div>
+            <div class="tsd">車程 <strong>50–60分鐘</strong></div>
+            <div class="tsd">班距 15–20分</div>
+          </div>
+          <div class="ts-tip">💡 終點 Đinh Tiên Hoàng 路，步行可達老城各飯店</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">🚇</div><span class="ts-badge badge-green">市區移動</span></div>
+        <div class="ts-body">
+          <div class="ts-title">河內地鐵 Lines 2 & 3</div>
+          <div class="ts-desc">覆蓋老城→西湖→日本街周邊，冷氣舒適，往返 Spa 最推薦。</div>
+          <div class="ts-detail">
+            <div class="tsd">票價 <strong>8,000–15,000 VND ≈ NT$9–18</strong></div>
+            <div class="tsd">儲值卡 <strong>100,000 VND 儲值</strong></div>
+          </div>
+          <div class="ts-tip">💡 Tây Hồ 站→日本街 Spa 聚落步行約10分鐘</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">🛵</div><span class="ts-badge badge-gold">彈性快捷</span></div>
+        <div class="ts-body">
+          <div class="ts-title">Grab App（汽車 / 機車）</div>
+          <div class="ts-desc">透明計費，夜間 Spa 後返飯店最安心，支援信用卡付款。</div>
+          <div class="ts-detail">
+            <div class="tsd">GrabBike <strong>20,000–35,000 VND ≈ NT$24–41</strong></div>
+            <div class="tsd">GrabCar <strong>50,000–120,000 VND ≈ NT$59–141</strong></div>
+          </div>
+          <div class="ts-tip">💡 Spa後建議搭GrabCar，身體放鬆後乘車更舒適</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">🚶</div><span class="ts-badge badge-green">景點散步</span></div>
+        <div class="ts-body">
+          <div class="ts-title">老城 / 日本街步行</div>
+          <div class="ts-desc">還劍湖、老城36街、日本街周邊 Spa 聚落皆可徒步串聯。</div>
+          <div class="ts-detail">
+            <div class="tsd">費用 <strong>免費</strong></div>
+            <div class="tsd">範圍 <strong>日本街 Spa 聚落半徑500m</strong></div>
+          </div>
+          <div class="ts-tip">💡 Spa後輕鬆漫步20分鐘以內，促進血液循環</div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-top"><div class="ts-icon">🚕</div><span class="ts-badge badge-gold">返程</span></div>
+        <div class="ts-body">
+          <div class="ts-title">市區 → 機場（GrabCar推薦）</div>
+          <div class="ts-desc">退房後行李多，建議直接叫GrabCar前往機場，車程35–45分鐘。</div>
+          <div class="ts-detail">
+            <div class="tsd">GrabCar <strong>180,000–220,000 VND ≈ NT$212–259</strong></div>
+            <div class="tsd">提前3hr抵達機場</div>
+          </div>
+          <div class="ts-tip">💡 行李多時亦可透過飯店安排機場接送，約NT$400–600</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Route flow visual -->
+    <div class="route-map fi">
+      <div class="route-title">📍 河內市區移動路線圖</div>
+      <div class="route-flow">
+        <div class="route-node"><div class="rn-icon">🛬</div><div class="rn-name">內排機場</div><div class="rn-note">HAN</div></div>
+        <div class="route-arrow"><div class="ra-line"></div><div class="ra-time">86號公車</div><div class="ra-cost">NT$35</div></div>
+        <div class="route-node"><div class="rn-icon">🏛️</div><div class="rn-name">還劍湖</div><div class="rn-note">老城核心</div></div>
+        <div class="route-arrow"><div class="ra-line"></div><div class="ra-time">地鐵/步行</div><div class="ra-cost">NT$9–18</div></div>
+        <div class="route-node"><div class="rn-icon">🏯</div><div class="rn-name">升龍皇城</div><div class="rn-note">UNESCO</div></div>
+        <div class="route-arrow"><div class="ra-line"></div><div class="ra-time">Grab/地鐵</div><div class="ra-cost">NT$24–41</div></div>
+        <div class="route-node"><div class="rn-icon">🌸</div><div class="rn-name">日本街</div><div class="rn-note">Spa 聚落</div></div>
+        <div class="route-arrow"><div class="ra-line"></div><div class="ra-time">步行</div><div class="ra-cost">免費</div></div>
+        <div class="route-node"><div class="rn-icon">🛁</div><div class="rn-name">Spa 會館</div><div class="rn-note">療癒目的地</div></div>
+      </div>
+    </div>
+
+    <!-- Budget table -->
+    <h3 class="sec-t fi" style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;">四天三夜 <em>台幣預算總表</em></h3>
+    <p class="sec-l fi" style="margin-bottom:28px;">以中等消費水準計算，匯率 1 TWD ≈ 850 VND</p>
+
+    <table class="btable fi">
+      <thead>
+        <tr><th>項目</th><th>越南盾 VND</th><th>台幣 NT$</th><th>備註</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>✈ 來回機票</td><td>—</td><td class="highlight">NT$4,500–8,000</td><td>早鳥越捷/虎航最低</td></tr>
+        <tr><td>🏨 住宿（3晚）</td><td>—</td><td class="highlight">NT$5,400–9,600</td><td>三星精品 NT$1,800/晚起</td></tr>
+        <tr><td>🍜 餐費（4天）</td><td>≈ 1,200,000</td><td class="highlight">NT$1,412</td><td>早/午/晚含飲料</td></tr>
+        <tr><td>🛁 Spa 療程（3次）</td><td>≈ 2,000,000</td><td class="highlight">NT$2,353</td><td>含腳底/精油/熱石</td></tr>
+        <tr><td>🚌 大眾交通（4天）</td><td>≈ 300,000</td><td class="highlight">NT$353</td><td>地鐵+86公車+Grab</td></tr>
+        <tr><td>🎫 景點門票</td><td>≈ 200,000</td><td class="highlight">NT$235</td><td>玉山祠/升龍/文廟等</td></tr>
+        <tr><td>🎁 購物/手信</td><td>≈ 1,000,000</td><td class="highlight">NT$1,176</td><td>咖啡/絲巾/精油等</td></tr>
+        <tr><td>🧾 雜費/緊急備用</td><td>—</td><td class="highlight">NT$500</td><td>SIM卡/保險/換匯手續費</td></tr>
+        <tr class="total"><td colspan="2"><strong>四天三夜 總預算（中等）</strong></td><td><strong>NT$15,929–23,629</strong></td><td>約 NT$18,000 最合算</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════ CHAPTER 3: SPA ════════════════════ -->
+<section id="ch3">
+  <div class="container">
+    <p class="ch-tag fi">Chapter Three</p>
+    <h2 class="sec-t fi">Spa & 養生按摩<br><em>完整攻略</em></h2>
+    <p class="sec-l fi">越南按摩融合法式芳療、日本溫泉與東南亞草藥智慧。日本街 Spa 聚落是河內夜間療癒的核心。</p>
+
+    <div class="spa-grid">
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(74,124,111,.25),rgba(20,30,24,.8));">🌿</div>
+        <div class="spa-body">
+          <div class="sp-name">Vietnamese Traditional</div><div class="sp-zh">越式傳統按摩</div>
+          <div class="sp-desc">指壓推拿結合，深層疏通經絡，消除長途飛行後的肌肉緊繃。</div>
+          <div class="sp-price">200,000–400,000 VND · 60–90分鐘</div>
+          <div class="sp-twd">≈ NT$235–471</div>
+        </div>
+      </div>
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(184,147,90,.2),rgba(20,30,24,.8));">🌸</div>
+        <div class="spa-body">
+          <div class="sp-name">Aromatherapy Oil Massage</div><div class="sp-zh">芳香精油按摩</div>
+          <div class="sp-desc">越南原生精油（薑黃/香茅/蓮花），舒緩神經，肌膚滋潤光澤。</div>
+          <div class="sp-price">500,000–900,000 VND · 90–120分鐘</div>
+          <div class="sp-twd">≈ NT$588–1,059</div>
+        </div>
+      </div>
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(100,130,180,.2),rgba(20,30,24,.8));">🪨</div>
+        <div class="spa-body">
+          <div class="sp-name">Hot Stone Therapy</div><div class="sp-zh">玄武岩熱石療法</div>
+          <div class="sp-desc">熱石深入肌層，促進血液循環，緩解慢性疲勞，適合上班族。</div>
+          <div class="sp-price">600,000–1,100,000 VND · 90分鐘</div>
+          <div class="sp-twd">≈ NT$706–1,294</div>
+        </div>
+      </div>
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(90,150,120,.25),rgba(20,30,24,.8));">🌱</div>
+        <div class="spa-body">
+          <div class="sp-name">Herbal Compress</div><div class="sp-zh">草藥熱敷療程</div>
+          <div class="sp-desc">薑、薑黃、香茅藥包熱敷，消炎暖身，冬季旅遊首選療程。</div>
+          <div class="sp-price">450,000–800,000 VND · 60–90分鐘</div>
+          <div class="sp-twd">≈ NT$529–941</div>
+        </div>
+      </div>
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(170,130,80,.2),rgba(20,30,24,.8));">🛁</div>
+        <div class="spa-body">
+          <div class="sp-name">Milk & Flower Bath</div><div class="sp-zh">牛奶花瓣浴</div>
+          <div class="sp-desc">玫瑰花瓣+牛奶+精油入浴，軟化角質美白保濕，日本街招牌。</div>
+          <div class="sp-price">400,000–750,000 VND · 45–60分鐘</div>
+          <div class="sp-twd">≈ NT$471–882</div>
+        </div>
+      </div>
+      <div class="spa-card fi">
+        <div class="spa-illo" style="background:linear-gradient(135deg,rgba(80,100,160,.2),rgba(20,30,24,.8));">👣</div>
+        <div class="spa-body">
+          <div class="sp-name">Reflexology Foot</div><div class="sp-zh">腳底反射療法</div>
+          <div class="sp-desc">竹鹽磨腳去角質+精準穴位按摩，改善睡眠，旅程首日入門首選。</div>
+          <div class="sp-price">150,000–300,000 VND · 40–60分鐘</div>
+          <div class="sp-twd">≈ NT$176–353</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ★ BUBBLE BATH FEATURE SECTION ★ -->
+    <div class="bubble-hero fi">
+      <!-- animated bubbles -->
+      <div class="bubbles-bg" id="bubblesContainer"></div>
+
+      <div class="bubble-content">
+        <div class="bb-eyebrow">🛁 日本街限定 · 必體驗</div>
+        <h3 class="bb-title">河內日本街<br><em>泡泡浴</em>完全指南</h3>
+        <p class="bb-subtitle">Bubble Bath · Phố Nhật Bản · Tây Hồ District</p>
+        <p class="bb-intro">
+          位於河內西湖區日本街（Phố Nhật Bản）的泡泡浴體驗，是融合日本溫泉文化與越南芳療傳統的獨特療癒項目。浴缸中注滿牛奶、玫瑰花瓣、精油與天然泡泡劑，整個房間氤氳著香氣，配合輕柔背景音樂，讓旅途中最疲憊的身心完全沉澱。入浴後搭配全身按摩，是河內夜間體驗的絕對王者。
+        </p>
+        <div class="bb-stats">
+          <div class="bb-stat">
+            <div class="bb-stat-lbl">入浴時間</div>
+            <div class="bb-stat-val">30–45</div>
+            <div class="bb-stat-note">分鐘 / 泡浴</div>
+          </div>
+          <div class="bb-stat">
+            <div class="bb-stat-lbl">套餐總時長</div>
+            <div class="bb-stat-val">90–150</div>
+            <div class="bb-stat-note">分鐘含按摩</div>
+          </div>
+          <div class="bb-stat">
+            <div class="bb-stat-lbl">費用起價</div>
+            <div class="bb-stat-val">NT$588</div>
+            <div class="bb-stat-note">500,000 VND起</div>
+          </div>
+          <div class="bb-stat">
+            <div class="bb-stat-lbl">最佳時段</div>
+            <div class="bb-stat-val">20:00</div>
+            <div class="bb-stat-note">晚餐後入場</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble Bath Flow -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#fff;margin-bottom:6px;" class="fi">泡泡浴體驗流程</h3>
+    <p style="font-size:.78rem;letter-spacing:.18em;color:rgba(123,184,212,.45);margin-bottom:24px;font-family:'Noto Serif TC',serif;" class="fi">從抵達到離開，每個步驟都是享受</p>
+
+    <div class="bubble-flow fi">
+      <div class="bf-step"><div class="bf-num">01</div><div class="bf-icon">📞</div><div class="bf-title">提前預約</div><div class="bf-desc">提前1–2天電話或WhatsApp預約，選擇套餐與入場時間，旺季可能爆滿。</div></div>
+      <div class="bf-step"><div class="bf-num">02</div><div class="bf-icon">🧴</div><div class="bf-title">更衣沐浴</div><div class="bf-desc">換上館方提供的浴袍，先淋浴清潔身體，去除防曬乳與外出灰塵。</div></div>
+      <div class="bf-step"><div class="bf-num">03</div><div class="bf-icon">🌸</div><div class="bf-title">浴缸注水</div><div class="bf-desc">工作人員在浴缸注入溫熱牛奶水，加入玫瑰花瓣、精油與天然泡泡劑。</div></div>
+      <div class="bf-step"><div class="bf-num">04</div><div class="bf-icon">🛁</div><div class="bf-title">沉浸泡浴</div><div class="bf-desc">躺入充滿泡沫的浴缸，30–45分鐘靜享，搭配燭光與療癒音樂，徹底放空。</div></div>
+      <div class="bf-step"><div class="bf-num">05</div><div class="bf-icon">🌿</div><div class="bf-title">沖淨更衣</div><div class="bf-desc">泡浴後淋浴沖淨，換上輕便衣物，準備進行後續按摩療程。</div></div>
+      <div class="bf-step"><div class="bf-num">06</div><div class="bf-icon">💆</div><div class="bf-title">全身按摩</div><div class="bf-desc">泡浴後肌肉最柔軟，此時進行60–90分鐘精油按摩，效果加倍。</div></div>
+    </div>
+
+    <!-- Packages -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#fff;margin-bottom:6px;" class="fi">泡泡浴套餐選擇</h3>
+    <p style="font-size:.78rem;letter-spacing:.18em;color:rgba(123,184,212,.45);margin-bottom:24px;font-family:'Noto Serif TC',serif;" class="fi">從入門體驗到頂級奢享，按需求選擇</p>
+
+    <div class="bubble-pkgs fi">
+      <div class="bpkg">
+        <div class="bpkg-top"><div class="bpkg-icon">🌸</div><span class="bpkg-badge badge-sky">入門推薦</span></div>
+        <div class="bpkg-body">
+          <div class="bpkg-name">Rose Petal Bubble Bath</div>
+          <div class="bpkg-zh">玫瑰花瓣基礎泡泡浴</div>
+          <ul class="bpkg-includes">
+            <li>玫瑰花瓣 + 泡泡入浴 30分鐘</li>
+            <li>淋浴設施 + 浴袍提供</li>
+            <li>輕飲料一杯（茉莉花茶）</li>
+            <li>腳底按摩 30分鐘</li>
+          </ul>
+          <div class="bpkg-price">500,000–650,000 VND</div>
+          <div class="bpkg-twd">≈ NT$588–765</div>
+          <div class="bpkg-duration">⏱ 約 60 分鐘</div>
+        </div>
+      </div>
+
+      <div class="bpkg featured">
+        <div class="bpkg-top"><div class="bpkg-icon">✨</div><span class="bpkg-badge badge-star">★ 最受歡迎</span></div>
+        <div class="bpkg-body">
+          <div class="bpkg-name">Milk & Honey Deluxe</div>
+          <div class="bpkg-zh">牛奶蜂蜜豪華泡泡浴</div>
+          <ul class="bpkg-includes">
+            <li>牛奶 + 蜂蜜 + 精油泡浴 45分鐘</li>
+            <li>玫瑰花瓣 + 蠟燭氛圍佈置</li>
+            <li>頸肩 + 頭部按摩 30分鐘</li>
+            <li>全身精油按摩 60分鐘</li>
+            <li>飲料 + 水果盤</li>
+          </ul>
+          <div class="bpkg-price">950,000–1,300,000 VND</div>
+          <div class="bpkg-twd">≈ NT$1,118–1,529</div>
+          <div class="bpkg-duration">⏱ 約 135 分鐘</div>
+        </div>
+      </div>
+
+      <div class="bpkg">
+        <div class="bpkg-top"><div class="bpkg-icon">💑</div><span class="bpkg-badge badge-sky">情侶首選</span></div>
+        <div class="bpkg-body">
+          <div class="bpkg-name">Couple Romance Package</div>
+          <div class="bpkg-zh">雙人浪漫泡泡浴套餐</div>
+          <ul class="bpkg-includes">
+            <li>雙人大浴缸 · 玫瑰 + 牛奶 + 精油</li>
+            <li>浴室蠟燭 + 玫瑰花瓣心形佈置</li>
+            <li>雙人同步全身按摩 90分鐘</li>
+            <li>氣泡飲品 + 草莓水果盤</li>
+            <li>合影拍照服務</li>
+          </ul>
+          <div class="bpkg-price">1,800,000–2,500,000 VND</div>
+          <div class="bpkg-twd">≈ NT$2,118–2,941（兩人份）</div>
+          <div class="bpkg-duration">⏱ 約 150 分鐘</div>
+        </div>
+      </div>
+
+      <div class="bpkg">
+        <div class="bpkg-top"><div class="bpkg-icon">🌿</div><span class="bpkg-badge badge-sky">療癒進階</span></div>
+        <div class="bpkg-body">
+          <div class="bpkg-name">Herbal Detox Soak</div>
+          <div class="bpkg-zh">草藥排毒泡泡浴</div>
+          <ul class="bpkg-includes">
+            <li>薑黃 + 香茅 + 艾草藥浴 45分鐘</li>
+            <li>蒸汽草藥薰蒸 15分鐘</li>
+            <li>越式傳統按摩 60分鐘</li>
+            <li>草藥熱敷包加強 20分鐘</li>
+          </ul>
+          <div class="bpkg-price">1,100,000–1,500,000 VND</div>
+          <div class="bpkg-twd">≈ NT$1,294–1,765</div>
+          <div class="bpkg-duration">⏱ 約 140 分鐘</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble Bath Venues -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#fff;margin-bottom:6px;" class="fi">日本街推薦泡泡浴會館</h3>
+    <p style="font-size:.78rem;letter-spacing:.18em;color:rgba(123,184,212,.45);margin-bottom:24px;font-family:'Noto Serif TC',serif;" class="fi">西湖 Tây Hồ 周邊 · 精選正規合法場所</p>
+
+    <div class="bubble-venues fi">
+      <div class="bv">
+        <div class="bv-rank">No.01 · 環境最優</div>
+        <div class="bv-name">Hinoki Onsen & Bubble Spa</div>
+        <div class="bv-area">📍 Tây Hồ · 日本街核心 · 步行5分鐘</div>
+        <div class="bv-tags"><span class="bv-tag">檜木浴桶</span><span class="bv-tag">牛奶泡浴</span><span class="bv-tag">情侶套餐</span><span class="bv-tag">蠟燭氛圍</span></div>
+        <div class="bv-price">800,000–2,200,000 VND</div>
+        <div class="bv-twd">≈ NT$941–2,588 / 套餐</div>
+        <div class="bv-note">日式和風裝潢，私人包廂設計，浴桶採天然檜木，香氣療癒。每間房附獨立淋浴間，最受情侶旅客推薦。</div>
+      </div>
+      <div class="bv">
+        <div class="bv-rank">No.02 · 花瓣最夢幻</div>
+        <div class="bv-name">Sakura Bubble & Massage</div>
+        <div class="bv-area">📍 Tây Hồ · 日本街旁巷內</div>
+        <div class="bv-tags"><span class="bv-tag">玫瑰花海</span><span class="bv-tag">牛奶蜂蜜</span><span class="bv-tag">精油按摩</span><span class="bv-tag">拍照佈置</span></div>
+        <div class="bv-price">600,000–1,500,000 VND</div>
+        <div class="bv-twd">≈ NT$706–1,765 / 套餐</div>
+        <div class="bv-note">以大量玫瑰花瓣鋪浴缸聞名，佈置夢幻，是IG熱門打卡場所，工作人員會協助拍照紀念。</div>
+      </div>
+      <div class="bv">
+        <div class="bv-rank">No.03 · 草藥最道地</div>
+        <div class="bv-name">Lotus Herbal Spa & Bath</div>
+        <div class="bv-area">📍 Tây Hồ · 近西湖蝦醬米粉街</div>
+        <div class="bv-tags"><span class="bv-tag">越式草藥浴</span><span class="bv-tag">薑黃泡浴</span><span class="bv-tag">傳統按摩</span></div>
+        <div class="bv-price">500,000–1,200,000 VND</div>
+        <div class="bv-twd">≈ NT$588–1,412 / 套餐</div>
+        <div class="bv-note">採用越南傳統草藥配方浴包，薑黃、香茅、蓮花獨特配比，偏重草藥療效多於視覺享受，適合注重養生功效的旅客。</div>
+      </div>
+      <div class="bv">
+        <div class="bv-rank">No.04 · CP值最高</div>
+        <div class="bv-name">Hana Bubble Bath House</div>
+        <div class="bv-area">📍 Tây Hồ · 日本街南側</div>
+        <div class="bv-tags"><span class="bv-tag">基礎泡浴</span><span class="bv-tag">足浴加購</span><span class="bv-tag">多房型</span></div>
+        <div class="bv-price">400,000–900,000 VND</div>
+        <div class="bv-twd">≈ NT$471–1,059 / 套餐</div>
+        <div class="bv-note">價格親民，服務實在，房間雖不如頂級精緻但清潔度高、技師素質穩定，旅遊預算有限的首選。</div>
+      </div>
+    </div>
+
+    <!-- Do / Don't -->
+    <div class="bubble-rules fi">
+      <div class="br-block do">
+        <div class="br-title">✅ 泡泡浴前後 · 這樣做</div>
+        <ul class="br-list">
+          <li><span class="mk">💧</span>泡浴前大量喝溫水，避免泡浴中頭暈</li>
+          <li><span class="mk">🧼</span>入浴前先淋浴清潔，去除防曬乳與汗水</li>
+          <li><span class="mk">📵</span>手機放防水袋或寄存，享受無螢幕療癒時光</li>
+          <li><span class="mk">🌡️</span>水溫控制在38–42°C，過燙反而傷皮膚</li>
+          <li><span class="mk">🍵</span>泡浴後補充溫熱飲品，促進代謝排毒</li>
+          <li><span class="mk">🛌</span>泡浴後輕鬆返飯店，當晚睡眠品質絕佳</li>
+        </ul>
+      </div>
+      <div class="br-block dont">
+        <div class="br-title">⛔ 這些事請避免</div>
+        <ul class="br-list">
+          <li><span class="mk">🍷</span>飯後1小時內、飲酒後請勿泡浴，易不適</li>
+          <li><span class="mk">🩹</span>皮膚有傷口、濕疹或急性發炎請先告知</li>
+          <li><span class="mk">💊</span>心臟病、高低血壓患者需事先徵詢醫師意見</li>
+          <li><span class="mk">⏰</span>泡浴時間勿超過50分鐘，過長易疲勞</li>
+          <li><span class="mk">🚿</span>泡浴後勿立即沖冷水，保持體溫漸進冷卻</li>
+          <li><span class="mk">🏃</span>療程後避免立即劇烈運動，讓身體慢慢恢復</li>
+        </ul>
+      </div>
+    </div>
+    <!-- /BUBBLE BATH SECTION -->
+
+    <!-- Top venues -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:#fff;margin-bottom:6px;margin-top:64px;" class="fi">其他精選 Spa 會館</h3>
+    <p style="font-size:.8rem;letter-spacing:.18em;color:rgba(107,155,126,.5);margin-bottom:30px;font-family:'Noto Serif TC',serif;" class="fi">五星飯店附設 & 在地口碑 · 含台幣參考價</p>
+
+    <div class="venues-grid">
+      <div class="vc fi">
+        <div class="vc-rank">No.01 · 頂級推薦</div>
+        <div class="vc-name">Bamboo Spa at Sofitel</div>
+        <div class="vc-area">📍 Hoàn Kiếm · 五星附設</div>
+        <div class="vc-tags"><span class="vc-tag">全身精油</span><span class="vc-tag">熱石</span><span class="vc-tag">花瓣浴</span><span class="vc-tag">英語服務</span></div>
+        <div class="vc-price">900,000–2,500,000 VND</div>
+        <div class="vc-twd">≈ NT$1,059–2,941 / 套餐</div>
+        <div class="vc-note">法式奢華與越南工藝融合，需提前1–2天預約。</div>
+      </div>
+      <div class="vc fi">
+        <div class="vc-rank">No.02 · 日本街首選</div>
+        <div class="vc-name">Sen Spa Hanoi</div>
+        <div class="vc-area">📍 Tây Hồ · 日本街核心</div>
+        <div class="vc-tags"><span class="vc-tag">越式按摩</span><span class="vc-tag">草藥熱敷</span><span class="vc-tag">牛奶浴</span><span class="vc-tag">情侶套餐</span></div>
+        <div class="vc-price">500,000–1,200,000 VND</div>
+        <div class="vc-twd">≈ NT$588–1,412 / 套餐</div>
+        <div class="vc-note">蓮花主題裝潢，外國旅客口碑最佳的正規 Spa 品牌。</div>
+      </div>
+      <div class="vc fi">
+        <div class="vc-rank">No.03 · CP值最高</div>
+        <div class="vc-name">Hanoi Mia Spa</div>
+        <div class="vc-area">📍 Ba Đình · 近胡志明陵</div>
+        <div class="vc-tags"><span class="vc-tag">腳底反射</span><span class="vc-tag">頸肩紓壓</span><span class="vc-tag">臉部護理</span><span class="vc-tag">會員折扣</span></div>
+        <div class="vc-price">300,000–700,000 VND</div>
+        <div class="vc-twd">≈ NT$353–824 / 套餐</div>
+        <div class="vc-note">技師訓練有素，預算有限的旅客首選。</div>
+      </div>
+      <div class="vc fi">
+        <div class="vc-rank">No.04 · 法式精品</div>
+        <div class="vc-name">L'Apothiquaire Artisan</div>
+        <div class="vc-area">📍 Ba Đình · 法式奢享</div>
+        <div class="vc-tags"><span class="vc-tag">法式芳療</span><span class="vc-tag">有機草本</span><span class="vc-tag">臉部護理</span><span class="vc-tag">私人包廂</span></div>
+        <div class="vc-price">700,000–1,800,000 VND</div>
+        <div class="vc-twd">≈ NT$824–2,118 / 套餐</div>
+        <div class="vc-note">法籍品牌，有機草本產品，歐美旅客高度推薦。</div>
+      </div>
+      <div class="vc fi">
+        <div class="vc-rank">No.05 · 在地口碑</div>
+        <div class="vc-name">Xuan Spa Hanoi</div>
+        <div class="vc-area">📍 Hoàn Kiếm · 老城核心</div>
+        <div class="vc-tags"><span class="vc-tag">傳統指壓</span><span class="vc-tag">竹鹽足浴</span><span class="vc-tag">快速套餐</span></div>
+        <div class="vc-price">200,000–500,000 VND</div>
+        <div class="vc-twd">≈ NT$235–588 / 套餐</div>
+        <div class="vc-note">技術扎實，老城散步後步行即達，適合即興體驗。</div>
+      </div>
+      <div class="vc fi">
+        <div class="vc-rank">No.06 · 日式風格</div>
+        <div class="vc-name">Hinoki Onsen & Spa</div>
+        <div class="vc-area">📍 Tây Hồ · 日本街</div>
+        <div class="vc-tags"><span class="vc-tag">檜木浴桶</span><span class="vc-tag">日式按摩</span><span class="vc-tag">抹茶護理</span><span class="vc-tag">情侶房</span></div>
+        <div class="vc-price">800,000–2,000,000 VND</div>
+        <div class="vc-twd">≈ NT$941–2,353 / 套餐</div>
+        <div class="vc-note">日本街最具和風氛圍，檜木浴桶體驗獨一無二。</div>
+      </div>
+    </div>
+
+    <div class="spa-tips fi">
+      <div class="st-head">Spa 體驗 · 注意事項</div>
+      <div class="st-col">
+        <h4>預約前準備</h4>
+        <ul>
+          <li>旺季（12–2月）提前1–2天預約，熱門場次易爆滿</li>
+          <li>透過飯店禮賓部代為預約更有保障</li>
+          <li>確認套餐費用明細，避免消費糾紛</li>
+          <li>選擇 TripAdvisor 高評分、持正式執照的合法會館</li>
+          <li>貴重物品留在飯店保險箱</li>
+        </ul>
+      </div>
+      <div class="st-col">
+        <h4>體驗中 & 療程後</h4>
+        <ul>
+          <li>皮膚過敏或受傷務必事先告知服務師</li>
+          <li>力道不適請立即告知，按摩師可調整</li>
+          <li>療程後大量補充溫水，促進代謝排毒</li>
+          <li>Spa後2小時內避免劇烈運動或飲酒</li>
+          <li>夜間返飯店建議搭GrabCar，放鬆狀態更安全</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CHAPTER 4 ════════════════════ -->
+<section id="ch4">
+  <div class="container">
+    <p class="ch-tag fi">Chapter Four</p>
+    <h2 class="sec-t fi">景點介紹<br><em>行前叮嚀</em>與緊急處置</h2>
+    <p class="sec-l fi">白天深遊河內千年文化，晚上暢享 Spa 療癒。出發前做好準備，讓每一刻都無憂。</p>
+
+    <div class="sights-grid">
+      <div class="sc fi"><div class="sc-top" style="background:rgba(74,124,111,.07);">🏛️</div><div class="sc-body"><div class="sc-name">還劍湖 & 玉山祠</div><div class="sc-desc">河內精神核心，傳說黎利王歸還神龜寶劍之地，龜塔、紅橋為最具代表性地標。</div><span class="sc-tag">免費入場</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(184,147,90,.07);">🏯</div><div class="sc-body"><div class="sc-name">升龍皇城</div><div class="sc-desc">建於1010年，UNESCO世界文化遺產，越南千年政治核心。</div><span class="sc-tag">NT$35 入場</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(90,130,100,.08);">🕌</div><div class="sc-body"><div class="sc-name">文廟 – 國子監</div><div class="sc-desc">越南第一學府，建於1070年，儒家文化聖地，千年學術氛圍濃厚。</div><span class="sc-tag">NT$35 入場</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(60,100,160,.07);">🌊</div><div class="sc-body"><div class="sc-name">西湖 Hồ Tây</div><div class="sc-desc">河內最大天然湖泊，日本街 Spa 聚落環湖，黃昏金光映湖，Spa 前後散步絕佳。</div><span class="sc-tag">免費</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(74,124,111,.1);">🌸</div><div class="sc-body"><div class="sc-name">日本街 Phố Nhật</div><div class="sc-desc">西湖區日人聚居社區，和風咖啡廳、拉麵、精品 Spa 林立，本次旅程主題核心。</div><span class="sc-tag">✨ 主題</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(150,100,50,.07);">🎭</div><div class="sc-body"><div class="sc-name">36條街老城</div><div class="sc-desc">各行各業命名的古街，銀街、絲綢街保留數百年商業傳統，手信採購必到。</div><span class="sc-tag">免費漫遊</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(120,80,80,.07);">🏛️</div><div class="sc-body"><div class="sc-name">胡志明陵寢</div><div class="sc-desc">越南民族英雄長眠之地，法式主席府莊嚴宏偉，早上參觀避免正午高溫。</div><span class="sc-tag">免費</span></div></div>
+      <div class="sc fi"><div class="sc-top" style="background:rgba(80,120,90,.08);">🎪</div><div class="sc-body"><div class="sc-name">民族學博物館</div><div class="sc-desc">54個民族文物，戶外傳統建築群，CNN評選東南亞十大必訪博物館之一。</div><span class="sc-tag">NT$47 入場</span></div></div>
+    </div>
+
+    <!-- Souvenirs -->
+    <div class="orn fi"><span></span><i>✦</i><span></span></div>
+    <h3 class="sec-t fi" style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:6px;">手信 & 名產 <em>精選10品</em></h3>
+    <p class="sec-l fi" style="margin-bottom:28px;">帶回台灣的河內記憶，含台幣參考售價</p>
+
+    <div class="souv-grid fi">
+      <div class="sv"><div class="sv-icon">☕</div><div class="sv-name">越南中原咖啡</div><div class="sv-note">Trung Nguyên，濃郁香醇，送禮首選。</div><div class="sv-price">80,000–250,000 VND</div><div class="sv-twd">≈ NT$94–294</div></div>
+      <div class="sv"><div class="sv-icon">🍃</div><div class="sv-name">西湖蓮花茶</div><div class="sv-note">河內特產，蓮花香氣融入綠茶。</div><div class="sv-price">150,000–400,000 VND</div><div class="sv-twd">≈ NT$176–471</div></div>
+      <div class="sv"><div class="sv-icon">🧣</div><div class="sv-name">手工絲巾</div><div class="sv-note">老城絲綢街可訂製，亞洲聞名。</div><div class="sv-price">200,000–600,000 VND</div><div class="sv-twd">≈ NT$235–706</div></div>
+      <div class="sv"><div class="sv-icon">🪔</div><div class="sv-name">Spa 精油 & 香皂</div><div class="sv-note">薑黃/香茅天然製成，最佳紀念品。</div><div class="sv-price">50,000–200,000 VND</div><div class="sv-twd">≈ NT$59–235</div></div>
+      <div class="sv"><div class="sv-icon">🎨</div><div class="sv-name">漆器藝術品</div><div class="sv-note">傳統漆畫工藝，高度收藏價值。</div><div class="sv-price">500,000–2,000,000 VND</div><div class="sv-twd">≈ NT$588–2,353</div></div>
+      <div class="sv"><div class="sv-icon">🌿</div><div class="sv-name">越南肉桂粉</div><div class="sv-note">質量頂級，香氣遠勝超市品。</div><div class="sv-price">30,000–80,000 VND</div><div class="sv-twd">≈ NT$35–94</div></div>
+      <div class="sv"><div class="sv-icon">👒</div><div class="sv-name">斗笠 Nón Lá</div><div class="sv-note">越南象徵，純手工編製輕巧。</div><div class="sv-price">80,000–200,000 VND</div><div class="sv-twd">≈ NT$94–235</div></div>
+      <div class="sv"><div class="sv-icon">🍬</div><div class="sv-name">越南腰果</div><div class="sv-note">世界第一產量，口感酥脆。</div><div class="sv-price">100,000–300,000 VND</div><div class="sv-twd">≈ NT$118–353</div></div>
+      <div class="sv"><div class="sv-icon">🥫</div><div class="sv-name">富國島魚露</div><div class="sv-note">越南料理靈魂，品質最佳。</div><div class="sv-price">50,000–120,000 VND</div><div class="sv-twd">≈ NT$59–141</div></div>
+      <div class="sv"><div class="sv-icon">🎁</div><div class="sv-name">鉢場村陶瓷</div><div class="sv-note">Bát Tràng青花瓷，精緻文雅。</div><div class="sv-price">80,000–500,000 VND</div><div class="sv-twd">≈ NT$94–588</div></div>
+    </div>
+
+    <!-- Tips -->
+    <div class="orn fi"><span></span><i>✦</i><span></span></div>
+    <h3 class="sec-t fi" style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:6px;">行前 <em>必知叮嚀</em></h3>
+    <p class="sec-l fi" style="margin-bottom:32px;">做足準備，旅途無憂</p>
+    <div class="ptips">
+      <div class="pt fi"><div class="pt-icon">📋</div><div class="pt-title">簽證 & 入境</div><ul class="pt-list"><li>台灣護照申請越南電子簽證E-Visa，效期90天，約US$25 ≈ NT$780</li><li>網址：evisa.xuatnhapcanh.gov.vn，出發前7天申請</li><li>護照有效期需在返台後6個月以上</li></ul></div>
+      <div class="pt fi"><div class="pt-icon">💰</div><div class="pt-title">換匯策略</div><ul class="pt-list"><li>台幣 NT$1 ≈ 850–900 VND，機場換匯較不划算</li><li>建議在市區銀行或金融機構換匯，匯率更佳</li><li>Spa/大商場可刷信用卡，減少攜帶現金風險</li></ul></div>
+      <div class="pt fi"><div class="pt-icon">📱</div><div class="pt-title">通訊 & 必備App</div><ul class="pt-list"><li>機場購 Viettel SIM，約US$7 ≈ NT$218，含5GB流量</li><li>必裝：Grab、Google Maps、Google翻譯（下載離線越語）</li><li>Spa預約可透過WhatsApp或飯店禮賓部</li></ul></div>
+      <div class="pt fi"><div class="pt-icon">🌡️</div><div class="pt-title">氣候 & 穿著</div><ul class="pt-list"><li>春(3–4月)最佳旅遊季，涼爽舒適</li><li>冬(12–2月)最低12°C，Spa後注意保暖</li><li>進廟宇需著長褲長裙；Spa前輕便穿搭最方便</li></ul></div>
+      <div class="pt fi"><div class="pt-icon">🍽️</div><div class="pt-title">飲食 & 健康</div><ul class="pt-list"><li>飲用瓶裝水，切勿飲用生水或路邊冰塊</li><li>Spa療程後補充大量溫水，避免頭暈</li><li>備腸胃藥、止瀉藥、暈車藥以防萬一</li></ul></div>
+      <div class="pt fi"><div class="pt-icon">🛡️</div><div class="pt-title">安全 & 保險</div><ul class="pt-list"><li>購買旅遊保險，含100萬醫療保障，約NT$300–500</li><li>貴重物品存飯店保險箱，Spa前只帶現金</li><li>Spa後夜間返飯店建議搭GrabCar，更安全</li></ul></div>
+    </div>
+
+    <!-- Emergency -->
+    <div class="emg fi">
+      <h3>🆘 緊急聯絡資訊</h3>
+      <div class="emg-grid">
+        <div class="ei"><div class="ei-l">越南警察</div><div class="ei-v">113</div><div class="ei-n">失竊 · 詐騙 · 報案</div></div>
+        <div class="ei"><div class="ei-l">越南救護車</div><div class="ei-v">115</div><div class="ei-n">醫療緊急狀況</div></div>
+        <div class="ei"><div class="ei-l">越南消防</div><div class="ei-v">114</div><div class="ei-n">火災緊急救援</div></div>
+        <div class="ei"><div class="ei-l">台灣駐越辦事處</div><div class="ei-v">+84-24-3833-5501</div><div class="ei-n">護照遺失 · 緊急協助</div></div>
+        <div class="ei"><div class="ei-l">外交部緊急專線</div><div class="ei-v">+886-800-085-095</div><div class="ei-n">24小時免費撥打</div></div>
+        <div class="ei"><div class="ei-l">推薦醫院</div><div class="ei-v">Vinmec International</div><div class="ei-n">英語服務 · 接受國際保險</div></div>
+        <div class="ei"><div class="ei-l">旅遊保險費用</div><div class="ei-v">約 NT$300–500</div><div class="ei-n">4天 · 含100萬醫療</div></div>
+        <div class="ei"><div class="ei-l">緊急備用金</div><div class="ei-v">NT$3,000</div><div class="ei-n">建議額外備用</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Hanoi Wellness 2025 · 河內養生深度之旅</div>
+  <p class="ft-note" style="margin-top:8px;">旅遊達人精製 · 台灣出發 · 白天探古都 · 夜晚享療癒</p>
+  <p style="margin-top:10px;font-size:.68rem;color:rgba(107,155,126,.18);letter-spacing:.08em;">匯率 1 TWD ≈ 850 VND，費用資訊僅供參考，實際依市場匯率及商家定價為準</p>
+</footer>
+
+<script>
+// Bubble animation
+const bc=document.getElementById('bubblesContainer');
+if(bc){
+  for(let i=0;i<18;i++){
+    const b=document.createElement('div');
+    b.className='bbl';
+    const size=Math.random()*40+10;
+    b.style.cssText=`
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      bottom:-60px;
+      animation-duration:${Math.random()*8+6}s;
+      animation-delay:${Math.random()*8}s;
+    `;
+    bc.appendChild(b);
+  }
+}
+
+// Cursor
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.transform=`translate(${mx-3.5}px,${my-3.5}px)`;
+});
+(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cur2.style.transform=`translate(${rx-14}px,${ry-14}px)`;requestAnimationFrame(loop);})();
+
+// Scroll fade
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+},{threshold:.07});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
